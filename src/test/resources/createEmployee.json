@@ -1,0 +1,9 @@
+{
+  "firstName": "Tamil",
+  "lastName": "Selvan",
+  "gender": "MALE",
+  "dateOfBirth": "06-06-1980",
+  "department": {
+    "code": "DPHY"
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./employee-demo.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>./employee-demo-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+					class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 10MB -->
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+    	</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [%X{user}] %msg%n</pattern>
+        </encoder>
+	</appender>
+
+	<!-- <logger name="org.hibernate.loader.entity.plan.EntityLoader" level="DEBUG"/>
+	<logger name="org.hibernate.loader.Loader" level="DEBUG"/>
+	<logger name="org.hibernate.mapping.Table" level="DEBUG"/>
+	<logger name="org.hibernate.event.internal.AbstractSaveEventListener" level="DEBUG"/>
+	<logger name="org.hibernate.SQL" level="INFO"/> -->
+
+	<!-- <logger name="org.springframework.test.context" level="INFO"/>  -->
+
+	<root level="INFO">
+		<!-- appender-ref ref="STDOUT" /> -->
+		<appender-ref ref="FILE"/>
+	</root>
+
+</configuration>
