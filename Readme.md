@@ -1,4 +1,4 @@
-# Spring Boot Employee demo Example
+# Employee demo example by using Spring Boot, JPA, FlywayDB, MySQL, Swagger.
 
 
 ## Requirements
