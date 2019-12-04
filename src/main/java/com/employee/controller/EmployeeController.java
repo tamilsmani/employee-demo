@@ -32,7 +32,7 @@ public class EmployeeController {
 	@PostMapping("/create")
 	@ApiOperation(value = "Create new employee")
 	@ApiResponses(value = {  
-			@ApiResponse(code = 200, message = "Successfully retrieved list", response = String.class),
+			@ApiResponse(code = 200, message = "Successfully retrieved list", response = Employee.class),
 			@ApiResponse(code = 401, message = "You are not authorized this resource"),
 	    })
 	public Employee createEmployee(@Valid @RequestBody Employee employee/*, UriComponentsBuilder builder*/) {
