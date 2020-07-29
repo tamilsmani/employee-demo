@@ -21,6 +21,35 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+/** 
+ * 
+ * 
+@Query(name="customFindAll")
+List<WacInfo> getAll();
+
+@NamedNativeQuery(name = "customFindAll", query = "select * from EMPLOYEE ", resultSetMapping="customResultSetMapping")
+@SqlResultSetMapping(
+			 name = "customResultSetMapping",
+			 entities = {
+					 // We have to load all the fields. For the custom fields use [ ConstructorResult & columns ] 
+				        @EntityResult(
+				           entityClass = Employee.class
+				        )
+				    }
+			 
+//			classes={
+//					@ConstructorResult(targetClass = EmployeeVO.class,
+//					columns = {
+//							@ColumnResult(name="id", 			type=String.class),
+//							@ColumnResult(name="countryCode", 	type=String.class)
+//					})
+//		    }
+			 
+)
+
+**/
+
+
 @Entity
 @Table(name = "EMPLOYEE")
 @EntityListeners(AuditingEntityListener.class)
